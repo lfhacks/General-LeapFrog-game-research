@@ -1,6 +1,9 @@
 # ANM File Format
 
 **Note:** All offsets are in hex and the format is little endian.
+**Another note:** This format is different to the Nintendo DS version of the format. 
+
+Palettes are stored in the ANM file itself.
 
 | Offset | Description | Data Type |
 |--------|-----------------------------------------------------------------------|------------------|
