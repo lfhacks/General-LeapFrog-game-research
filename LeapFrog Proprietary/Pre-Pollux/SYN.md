@@ -29,10 +29,6 @@ Notes have a duration which can be put into a note off event in the converted MI
 
 There is no "note on" or "note off" events in this format.
 
-Commands 0x81-0x84 aren't needed in conversions, as they're exclusively used by the sound driver because of the limited hardware.
-
-They don't do anything worthwhile!
-
 | Command name | Command byte | Command data | Command is variable width |
 | ------------------------- | :----------: | :---------------: | --------------------: |
 | Note | 00-7F | Duration | Yes, up to 3 bytes long |
@@ -54,3 +50,5 @@ When converting this format, be sure to follow this order of operations when han
 - Create a note off event after the note on event with the note's duration value
 
 To handle the volume command, just store it in a variable and use it as every note's velocity until another volume command is hit.
+
+To somewhat properly (but not completely properly) handle the pitch bends, subtract 127 from the value and multiply it by 64. They'll still be off, but not as much as any other method.
