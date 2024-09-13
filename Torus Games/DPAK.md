@@ -7,6 +7,7 @@ It stores sprites, maps, level layouts and palette data. The said data can also 
 | offset+0x00                    | identifier           | 4 Bytes                           | Identifier                        |
 | offset+0x04                    | entries              | Little Endian 16-Bit Integer      | Number of entries                 |
 | offset+0x06                    | torus                | (10 bytes)                        | "Torus" signature                 |
+| (Info)                         | Repeat rest for however many entries the entries variable says there are
 | offset+0x10                    | chunkType            | Little Endian 32-Bit Integer      | Chunk type                        |
 | offset+0x14                    | dataOffset           | Little Endian 32-Bit Integer      | Data offset                       |
 | offset+0x18                    | dataSize             | Little Endian 32-Bit Integer      | Data size                         |
