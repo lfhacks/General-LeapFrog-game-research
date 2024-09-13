@@ -9,17 +9,17 @@ All variables are little endian!
 | 0x100        | signature                    | 0x18      | ROM signature (terminated by 00, 00 is included  |
 | 0x118        | ChorusRIBTableMinorVersion   | Byte      | Minor version of the Chorus RIB Table            |
 | 0x119        | ChorusRIBTableMajorVersion   | Byte      | Major version of the Chorus RIB Table            |
-| 0x11A        | ribCount                     | Little Endian 16-Bit Integer      | Number of RIB entries                            |
-| 0x11C        | deviceStartAddress           | Little Endian 32-Bit Integer      | Start address of the device (subtract from all pointers!)|
-| 0x120        | deviceEndAddress             | Little Endian 32-Bit Integer      | End address of the device                        |
-| 0x124        | pFullChecksum                | Little Endian 32-Bit Integer      | Full checksum pointer                            |
-| 0x128        | pSparseChecksum              | Little Endian 32-Bit Integer      | Sparse checksum pointer                          |
-| 0x12C        | pBootSafeFcnTable            | Little Endian 32-Bit Integer      | Boot safe function table pointer (always zero?)  |
+| 0x11A        | ribCount                     | 16-Bit Integer      | Number of RIB entries                            |
+| 0x11C        | deviceStartAddress           | 32-Bit Integer      | Start address of the device (subtract from all pointers!)|
+| 0x120        | deviceEndAddress             | 32-Bit Integer      | End address of the device                        |
+| 0x124        | pFullChecksum                | 32-Bit Integer      | Full checksum pointer                            |
+| 0x128        | pSparseChecksum              | 32-Bit Integer      | Sparse checksum pointer                          |
+| 0x12C        | pBootSafeFcnTable            | 32-Bit Integer      | Boot safe function table pointer (always zero?)  |
 | 0x130        | reserved                     | 0x04      | Reserved                                         |
 | 0x134        | reserved                     | 0x04      | Reserved                                         |
 | 0x138        | reserved                     | 0x04      | Reserved                                         |
 | 0x13C        | reserved                     | 0x04      | Reserved                                         |
-| 0x140        | ribTable                     | Little Endian 32-Bit Integer      | Start address of the RIB table                   |
+| 0x140        | ribTable                     | 32-Bit Integer      | Start address of the RIB table                   |
 
 # RIB Table structure
 
@@ -28,7 +28,7 @@ All variables are little endian!
 | ribTable+0x00                  | signature            | 0x04      | RIB signature                     |
 | ribTable+0x04                  | RIBMinorVersion      | Byte      | Minor version of the RIB          |
 | ribTable+0x05                  | RIBMajorVersion      | Byte      | Major version of the RIB          |
-| ribTable+0x06                  | resourceGroupCount   | Little Endian 16-Bit Integer      | Number of resource groups         |
+| ribTable+0x06                  | resourceGroupCount   | 16-Bit Integer      | Number of resource groups         |
 | ribTable+0x08                  | reserved             | 0x04      | Reserved                          |
 | ribTable+0x0C                  | reserved             | 0x04      | Reserved                          |
 | ribTable+0x10                  | reserved             | 0x04      | Reserved                          |
@@ -39,9 +39,9 @@ All variables are little endian!
 Repeat the next part however many times resourceGroupCount specifies
 | Address                        | Variable Name        | Data Size | Description                                |
 |--------------------------------|----------------------|-----------|--------------------------------------------|
-| ribTable+0x20                  | RIB_Group_ID         | Little Endian 16-Bit Integer      | RIB Group ID                               |
-| ribTable+0x22                  | count                | Little Endian 16-Bit Integer      | Number of entries in this group table      |
-| ribTable+0x24                  | offset               | Little Endian 32-Bit Integer      | Start offset of the table                  |
+| ribTable+0x20                  | RIB_Group_ID         | 16-Bit Integer      | RIB Group ID                               |
+| ribTable+0x22                  | count                | 16-Bit Integer      | Number of entries in this group table      |
+| ribTable+0x24                  | offset               | 32-Bit Integer      | Start offset of the table                  |
 
 
 # RIB group IDs
@@ -70,10 +70,10 @@ These are little endian values that get read as shorts by the Leapster.
 # Group structure
 | Address                                | Variable Name        | Data Type                         | Description                       |
 |-----------------------|----------------------|-----------------------------------|-------------------------------------------|
-| groupTableOffset+0x00 | dataID               | Little Endian 16-Bit Integer      | Data identifier                           |
-| groupTableOffset+0x02 | groupMinorVersion    | Byte                              | Minor version of the current table index  |
-| groupTableOffset+0x03 | groupMajorVersion    | Byte                              | Major version of the current table index  |
-| groupTableOffset+0x04 | dataOrDataOffset     | Little Endian 32-Bit Integer      | Can either be an offset or 4 bytes of data (like the part number in hex) |
+| groupTableOffset+0x00 | dataID               | 16-Bit Integer      | Data identifier                           |
+| groupTableOffset+0x02 | groupMinorVersion    | Byte                | Minor version of the current table index  |
+| groupTableOffset+0x03 | groupMajorVersion    | Byte                | Major version of the current table index  |
+| groupTableOffset+0x04 | dataOrDataOffset     | 32-Bit Integer      | Can either be an offset or 4 bytes of data (like the part number in hex) |
 
 
 # Index Table structures (to-do)
