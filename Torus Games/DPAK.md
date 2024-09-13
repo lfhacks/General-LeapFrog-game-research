@@ -8,9 +8,9 @@ It stores sprites, maps, level layouts and palette data. The said data can also 
 | offset+0x04                    | entries              | Little Endian 16-Bit Integer      | Number of entries                 |
 | offset+0x06                    | torus                | (10 bytes)                        | "Torus" signature                 |
 | (Info)                         | Repeat the rest for however many entries there are
-| offset+0x10                    | chunkType            | Little Endian 32-Bit Integer      | Chunk type                        |
-| offset+0x14                    | dataOffset           | Little Endian 32-Bit Integer      | Data offset                       |
-| offset+0x18                    | dataSize             | Little Endian 32-Bit Integer      | Data size                         |
+| offset+0x10                    | Chunk Type           | Little Endian 32-Bit Integer      | Chunk type                        |
+| offset+0x14                    | Chunk Offset         | Little Endian 32-Bit Integer      | Data offset                       |
+| offset+0x18                    | Chunk Size           | Little Endian 32-Bit Integer      | Data size                         |
 | offset+0x1C                    | nothing              | 4 Bytes                           | Reserved                          |
 
 # Compressed files
