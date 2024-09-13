@@ -4,7 +4,7 @@ All variables are little endian!
 
 # Chorus RIB Table structure
 
-| Offset (Hex) | Variable Name                | Data Size | Description                                      |
+| Offset (Hex) | Variable Name                | Data Type/size | Description                                      |
 |--------------|------------------------------|-----------|----------------------------------------------------------|
 | 0x100        | signature                    | 0x18      | "Copyright LeapFrog" signature (terminated by 00, 00 is included)  |
 | 0x118        | ChorusRIBTableMinorVersion   | Byte      | Minor version of the Chorus RIB Table            |
@@ -23,7 +23,7 @@ All variables are little endian!
 
 # RIB Table structure
 
-| Address                        | Variable Name        | Data Size | Description                       |
+| Address                        | Variable Name        | Data Type/size | Description                       |
 |--------------------------------|----------------------|-----------|--------------------------------------------|
 | ribTable+0x00                  | signature            | 0x04      | RIB signature                     |
 | ribTable+0x04                  | RIBMinorVersion      | Byte      | Minor version of the RIB          |
@@ -37,7 +37,7 @@ All variables are little endian!
 | ribTable+0x1C                  | reserved             | 0x04      | Reserved                          |
 
 Repeat the next part however many times resourceGroupCount specifies
-| Address                        | Variable Name        | Data Size | Description                                |
+| Address                        | Variable Name        | Data Type/size | Description                                |
 |--------------------------------|----------------------|-----------|--------------------------------------------|
 | ribTable+0x20                  | RIB_Group_ID         | 16-Bit Integer      | RIB Group ID                               |
 | ribTable+0x22                  | count                | 16-Bit Integer      | Number of entries in this group table      |
