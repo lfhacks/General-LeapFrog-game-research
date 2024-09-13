@@ -6,7 +6,7 @@ All variables are little endian!
 
 | Offset (Hex) | Variable Name                | Data Size | Description                                      |
 |--------------|------------------------------|-----------|----------------------------------------------------------|
-| 0x100        | signature                    | 0x18      | ROM signature (terminated by 00, 00 is included  |
+| 0x100        | signature                    | 0x18      | "Copyright LeapFrog" signature (terminated by 00, 00 is included)  |
 | 0x118        | ChorusRIBTableMinorVersion   | Byte      | Minor version of the Chorus RIB Table            |
 | 0x119        | ChorusRIBTableMajorVersion   | Byte      | Major version of the Chorus RIB Table            |
 | 0x11A        | ribCount                     | 16-Bit Integer      | Number of RIB entries                            |
