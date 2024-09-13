@@ -1,6 +1,6 @@
 This container format is used in almost every Torus Games release on the GBA, Leapster and Didj. 
 
-It stores sprites, maps, level layouts and palette data. The said data can also be compressed (and the names are known), but the actual algorithms used are unknown.
+It stores sprites, maps, level layouts and palette data. The said data can also be compressed (and the compression format names are sort of known), but the actual algorithms used are unknown.
 
 Here's a list of LeapFrog games that used it:
 - Cars
