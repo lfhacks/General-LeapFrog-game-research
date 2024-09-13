@@ -4,7 +4,7 @@
 
 **Another note:** This format is different to the Nintendo DS version of the format. 
 
-Palettes are stored in the ANM file itself.
+Palettes are stored in the ANM file itself. The sprite data is 8 bits per pixel.
 
 | Offset | Description | Data Type |
 |--------|-----------------------------------------------------------------------|------------------|

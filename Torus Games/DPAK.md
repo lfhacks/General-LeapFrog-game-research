@@ -1,6 +1,17 @@
-This container format is used in almost every Torus Games release on the GBA, Leapster and Didji Racing on the LeapFrog Didj.
+This container format is used in almost every Torus Games release on the GBA, Leapster and Didj. 
 
-It stores sprites, maps, level layouts and palette data. The said data can also be compressed (and the names are known), but the actual algorithms used are unknown.
+It stores sprites, maps, level layouts and palette data. The said data can also be compressed (and the compression format names are sort of known), but the actual algorithms used are unknown.
+
+Here's a list of LeapFrog games that used it:
+- Cars
+- Cars Supercharged
+- Counting on Zero
+- Didji Racing: Tiki Tropics
+- Go, Diego, Go! Animal Rescuer
+- NASCAR
+- Sonic X
+
+For the Didj game, it's stored in an elf file. Said elf file even has the DPAK section names.
 
 | Address                        | Variable Name        | Data Type                         | Description                       |
 |--------------------------------|----------------------|-----------------------------------|-----------------------------------|
