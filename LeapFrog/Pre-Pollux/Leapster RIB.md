@@ -7,28 +7,28 @@ All variables are little endian!
 | Offset (Hex) | Variable Name                | Data Size | Description                                      |
 |--------------|------------------------------|-----------|----------------------------------------------------------|
 | 0x100        | signature                    | 0x18      | ROM signature (terminated by 00, 00 is included  |
-| 0x118        | ChorusRIBTableMinorVersion   | 0x01      | Minor version of the Chorus RIB Table            |
-| 0x119        | ChorusRIBTableMajorVersion   | 0x01      | Major version of the Chorus RIB Table            |
-| 0x11A        | ribCount                     | 0x02      | Number of RIB entries                            |
-| 0x11C        | deviceStartAddress           | 0x04      | Start address of the device (subtract from all pointers!)|
-| 0x120        | deviceEndAddress             | 0x04      | End address of the device                        |
-| 0x124        | pFullChecksum                | 0x04      | Full checksum pointer                            |
-| 0x128        | pSparseChecksum              | 0x04      | Sparse checksum pointer                          |
-| 0x12C        | pBootSafeFcnTable            | 0x04      | Boot safe function table pointer (always zero?)  |
+| 0x118        | ChorusRIBTableMinorVersion   | Byte      | Minor version of the Chorus RIB Table            |
+| 0x119        | ChorusRIBTableMajorVersion   | Byte      | Major version of the Chorus RIB Table            |
+| 0x11A        | ribCount                     | Little Endian 16-Bit Integer      | Number of RIB entries                            |
+| 0x11C        | deviceStartAddress           | Little Endian 32-Bit Integer      | Start address of the device (subtract from all pointers!)|
+| 0x120        | deviceEndAddress             | Little Endian 32-Bit Integer      | End address of the device                        |
+| 0x124        | pFullChecksum                | Little Endian 32-Bit Integer      | Full checksum pointer                            |
+| 0x128        | pSparseChecksum              | Little Endian 32-Bit Integer      | Sparse checksum pointer                          |
+| 0x12C        | pBootSafeFcnTable            | Little Endian 32-Bit Integer      | Boot safe function table pointer (always zero?)  |
 | 0x130        | reserved                     | 0x04      | Reserved                                         |
 | 0x134        | reserved                     | 0x04      | Reserved                                         |
 | 0x138        | reserved                     | 0x04      | Reserved                                         |
 | 0x13C        | reserved                     | 0x04      | Reserved                                         |
-| 0x140        | ribTable                     | 0x04      | Start address of the RIB table                   |
+| 0x140        | ribTable                     | Little Endian 32-Bit Integer      | Start address of the RIB table                   |
 
 # RIB Table structure
 
 | Address                        | Variable Name        | Data Size | Description                       |
 |--------------------------------|----------------------|-----------|--------------------------------------------|
 | ribTable+0x00                  | signature            | 0x04      | RIB signature                     |
-| ribTable+0x04                  | RIBMinorVersion      | 0x01      | Minor version of the RIB          |
-| ribTable+0x05                  | RIBMajorVersion      | 0x01      | Major version of the RIB          |
-| ribTable+0x06                  | resourceGroupCount   | 0x02      | Number of resource groups         |
+| ribTable+0x04                  | RIBMinorVersion      | Byte      | Minor version of the RIB          |
+| ribTable+0x05                  | RIBMajorVersion      | Byte      | Major version of the RIB          |
+| ribTable+0x06                  | resourceGroupCount   | Little Endian 16-Bit Integer      | Number of resource groups         |
 | ribTable+0x08                  | reserved             | 0x04      | Reserved                          |
 | ribTable+0x0C                  | reserved             | 0x04      | Reserved                          |
 | ribTable+0x10                  | reserved             | 0x04      | Reserved                          |
@@ -37,11 +37,11 @@ All variables are little endian!
 | ribTable+0x1C                  | reserved             | 0x04      | Reserved                          |
 
 Repeat the next part however many times resourceGroupCount specifies
-| Address                        | Variable Name        | Data Size | Description                       |
+| Address                        | Variable Name        | Data Size | Description                                |
 |--------------------------------|----------------------|-----------|--------------------------------------------|
-| ribTable+0x20                  | RIB_Group_ID         | 0x02      | RIB Group ID                      |
-| ribTable+0x22                  | count                | 0x02      | Number of entries in this table   |
-| ribTable+0x24                  | offset               | 0x04      | Start offset of the table         |
+| ribTable+0x20                  | RIB_Group_ID         | Little Endian 16-Bit Integer      | RIB Group ID                               |
+| ribTable+0x22                  | count                | Little Endian 16-Bit Integer      | Number of entries in this group table      |
+| ribTable+0x24                  | offset               | Little Endian 32-Bit Integer      | Start offset of the table                  |
 
 
 # RIB group IDs
