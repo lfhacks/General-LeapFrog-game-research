@@ -1,6 +1,6 @@
 This container format is used in almost every Torus Games release on the GBA, Leapster and Didj. 
 
-It stores sprites, maps, level layouts and palette data. The said data can also be compressed (and the compression format names are sort of known), but the actual algorithms used are unknown.
+It stores sprites, maps, level layouts and palette data. The said data can also be compressed (and the compression format names are sort of known), but the exact algorithms used are unknown. LZW is likely to be the [Lempel-Ziv-Welch](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch) compression algorithm, however LZB seems to be a custom variation of the [LZ77 and LZ78](https://en.wikipedia.org/wiki/LZ77_and_LZ78) algorithms that LZW is based on.
 
 Here's a list of LeapFrog games that used it:
 - Cars
