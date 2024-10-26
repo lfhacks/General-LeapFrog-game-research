@@ -10,3 +10,7 @@ There seem to be two variations of .TEX files. One variant has a 16-byte header 
 | 0x04 | u32 | Width |
 | 0x08 | u32 | Height |
 | 0x0c | u32 | Image size |
+
+## Variant 2 (compressed header)
+
+736 bytes long, ends with 0xDF repeated 8 times. Tends to be tiled (?)
