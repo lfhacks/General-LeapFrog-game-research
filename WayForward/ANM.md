@@ -23,7 +23,7 @@ Palettes are stored in the ANM file itself. The sprite data is 8 bits per pixel 
 
 The info starting after this point is a work in progress!
 
-| Offset | Description | Data Type |
+| Offset (in decimal, not hex) | Description | Data Type |
 |--------|-----------------------------------------------------------------------|------------------|
 | (start of tile alignment/hitbox table)  | Main hitbox | 32 bytes (structure not yet known) |
 | (start of tile alignment/hitbox table)+32  | Chunk count (for this example, it's 2) | 16-Bit short |
@@ -31,8 +31,8 @@ The info starting after this point is a work in progress!
 | (start of tile alignment/hitbox table)+36  | Chunk 2 X position | 16-Bit short |
 | (start of tile alignment/hitbox table)+38  | Chunk 1 Y position | 16-Bit short |
 | (start of tile alignment/hitbox table)+40  | Chunk 2 Y position | 16-Bit short |
-| (start of tile alignment/hitbox table)+32  | Chunk 1 offset (Check below for the format!) | 16-Bit short |
-| (start of tile alignment/hitbox table)+32  | Chunk 2 offset (Check below for the format!) | 16-Bit short |
+| (start of tile alignment/hitbox table)+42  | Chunk 1 offset (Check below for the format!) | 16-Bit short |
+| (start of tile alignment/hitbox table)+44  | Chunk 2 offset (Check below for the format!) | 16-Bit short |
 
 The offsets are formatted like this (these are the individual bits of the offset value):
 
