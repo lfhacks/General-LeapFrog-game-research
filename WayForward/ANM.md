@@ -39,8 +39,8 @@ The offsets are formatted like this (these are the individual bits of the offset
 | Bits | Description |
 |--------|-----------------------------------------------------------------------|
 | 0 | How many bits per pixel this sprite is (0 = 4, 1 = 8) | 
-| 1 | Unused |
+| 1 | Unused? |
 | 2-3 | X size (tiles) (0 is 1) |
 | 4-5 | Y size (tiles) (0 is 1) |
 | 6-13 | Starting tile index (from start of current sprite offset) | 
-| 14-15 | Unused |
+| 14-15 | Unused? |
