@@ -14,7 +14,7 @@ Palettes are stored in the ANM file itself (Didj version only - skip that part i
 | 208    | Sprite data start offset | 32-Bit integer |
 | 20C    | Size of all sprite data from the start offset | 32-Bit integer |
 | (Info) | Repeat the following for however many frames there are in the file | - |
-| 210    | Tile alignment and hitbox table offset | 32-Bit integer |
+| 210    | Hitbox and sprite chunk info offset | 32-Bit integer |
 | 214    | Start of current sprite (add the sprite data start offset to this!)| 32-Bit integer |
 | 218    | Size of the current sprite in bytes | 32-Bit integer |
 
