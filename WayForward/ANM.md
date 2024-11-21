@@ -1,8 +1,10 @@
-# ANM File Format
+# ANM File Format (Nintendo DS, LeapFrog Didj)
 
 **Note:** All offsets are in hex and the format is little endian.
 
-Palettes are stored in the ANM file itself (Didj version only - skip that part if you're looking at the DS version). The sprite data is 8 bits per pixel (and tiled, each tile is 8 pixels wide and 8 pixels tall).
+Palettes are stored in the ANM file itself. The sprite data is 8 bits per pixel and tiled (8x8 pixels).
+
+Skip the palette part and this documentation also works for the Nintendo DS version of the format.
 
 | Offset | Description | Data Type |
 |--------|-----------------------------------------------------------------------|------------------|
