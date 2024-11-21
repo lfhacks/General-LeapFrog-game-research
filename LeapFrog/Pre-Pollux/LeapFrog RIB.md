@@ -1,16 +1,16 @@
-This is a breakdown of the Leapster RIB format. This also gets used on the LeapReader, Tag, Tag Jr. and Fly Pentop Computer.
+This is a breakdown of the LeapFrog RIB format (this format is little endian)
 
-All variables are little endian!
+Variable names came from both the Batman source code and some leftover symbols in a few Leapster Explorer ports of LeapReader books.
 
 # Chorus RIB Table structure
 
 | Offset (Hex) | Variable Name                | Data Type/size | Description                                      |
 |--------------|------------------------------|-----------|----------------------------------------------------------|
-| 0x100        | signature                    | 0x18      | "Copyright LeapFrog" signature (terminated by 00, 00 is included)  |
+| 0x100        | signature                    | 0x18      | "Copyright LeapFrog" signature (terminated by 00)  |
 | 0x118        | ChorusRIBTableMinorVersion   | Byte      | Minor version of the Chorus RIB Table            |
 | 0x119        | ChorusRIBTableMajorVersion   | Byte      | Major version of the Chorus RIB Table            |
 | 0x11A        | ribCount                     | 16-Bit Integer      | Number of RIB entries                            |
-| 0x11C        | deviceStartAddress           | 32-Bit Integer      | Start address of the device (subtract from all pointers!)|
+| 0x11C        | deviceStartAddress           | 32-Bit Integer      | Start address of the device (subtract from all pointers if you want the offsets they point to in the ROM)|
 | 0x120        | deviceEndAddress             | 32-Bit Integer      | End address of the device                        |
 | 0x124        | pFullChecksum                | 32-Bit Integer      | Full checksum pointer                            |
 | 0x128        | pSparseChecksum              | 32-Bit Integer      | Sparse checksum pointer                          |
