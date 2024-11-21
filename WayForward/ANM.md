@@ -2,13 +2,11 @@
 
 **Note:** All offsets are in hex and the format is little endian.
 
-**Another note:** This format is different to the Nintendo DS version of the format. 
-
-Palettes are stored in the ANM file itself. The sprite data is 8 bits per pixel (and tiled, each tile is 8 pixels wide and 8 pixels tall).
+Palettes are stored in the ANM file itself (Didj version only - skip that part if you're looking at the DS version). The sprite data is 8 bits per pixel (and tiled, each tile is 8 pixels wide and 8 pixels tall).
 
 | Offset | Description | Data Type |
 |--------|-----------------------------------------------------------------------|------------------|
-| 0-1FF  | Palette (BGR555 format) | - |
+| 0-1FF  | Palette (BGR555 format) (skip this if you're looking at the DS version!) | - |
 | 200    | Unknown | 16-Bit short |
 | 202    | Unknown | 16-Bit short |
 | 204    | Unknown | 16-Bit short |
