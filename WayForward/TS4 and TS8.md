@@ -1,4 +1,4 @@
-# TS8 File Format (Nintendo DS, LeapFrog Didj)
+# TS4/TS8 File Format (Nintendo DS, LeapFrog Didj)
 
 **Note:** All offsets are in hex and the format is little endian.
 
@@ -15,4 +15,4 @@ Skip the palette part and this documentation should also work for the Nintendo D
 | 208-213 | Unused | - |
 | Info    | The tile index table starts here. Use the tile count from before here. | Total tile count |
 | -       | Read (Total tile count) number of entries, each entry being a 32-Bit integer    | - |
-| -       | The tile data should start right after reading the entries             | 8BPP indexed tile data |
+| -       | The tile data should start right after reading the entries             | 4BPP (reverse order)/8BPP indexed tile data (depending on the file type) |
