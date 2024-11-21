@@ -23,18 +23,18 @@ Palettes are stored in the ANM file itself. The sprite data is 8 bits per pixel 
 
 The info starting after this point is a work in progress!
 
-| Offset (in decimal, not hex) | Description | Data Type |
+| Offset | Description | Data Type |
 |--------|-----------------------------------------------------------------------|------------------|
-| (start of tile alignment/hitbox table)  | Main hitbox | 32 bytes (structure not yet known) |
-| (start of tile alignment/hitbox table)+32  | Chunk count (for this example, it's 2) | 16-Bit short |
-| (start of tile alignment/hitbox table)+34  | Chunk 1 X position | 16-Bit short |
-| (start of tile alignment/hitbox table)+36  | Chunk 2 X position | 16-Bit short |
-| (start of tile alignment/hitbox table)+38  | Chunk 1 Y position | 16-Bit short |
-| (start of tile alignment/hitbox table)+40  | Chunk 2 Y position | 16-Bit short |
-| (start of tile alignment/hitbox table)+42  | Chunk 1 offset (Check below for the format!) | 16-Bit short |
-| (start of tile alignment/hitbox table)+44  | Chunk 2 offset (Check below for the format!) | 16-Bit short |
+| (start of tile alignment/hitbox table)+00  | Main hitbox | 32 bytes (structure not yet known, the values in here are all 16-Bit shorts) |
+| (start of tile alignment/hitbox table)+20  | Chunk count (for this example, it's 2 - the X/Y/info value counts are determined by this value) | 16-Bit short |
+| (start of tile alignment/hitbox table)+22  | Chunk 1 X position | 16-Bit short |
+| (start of tile alignment/hitbox table)+24  | Chunk 2 X position | 16-Bit short |
+| (start of tile alignment/hitbox table)+26  | Chunk 1 Y position | 16-Bit short |
+| (start of tile alignment/hitbox table)+28  | Chunk 2 Y position | 16-Bit short |
+| (start of tile alignment/hitbox table)+2A  | Chunk 1 info (Check below for the format!) | 16-Bit short |
+| (start of tile alignment/hitbox table)+2C  | Chunk 2 info (Check below for the format!) | 16-Bit short |
 
-The offsets are formatted like this (these are the individual bits of the offset value):
+The info variables are formatted like this (these are the individual bits of the info value):
 
 | Bits | Description |
 |--------|-----------------------------------------------------------------------|
@@ -44,3 +44,11 @@ The offsets are formatted like this (these are the individual bits of the offset
 | 4-5 | Y size (tiles) (0 is 1) |
 | 6-13 | Starting tile index (from start of current sprite offset) | 
 | 14-15 | Unused? |
+
+Here's an example (B is the bits per pixel value, _ is unused, X/Y are the size, S is the start index in tiles):
+
+B_XXYYOOOOOOOO__
+
+1001010000000000
+
+With my current documentation, that'd be 8 bits per pixel, 2 tiles wide, 2 tiles tall and you'd start on tile index 0
