@@ -47,7 +47,7 @@ The info variables are formatted like this (these are the individual bits of the
 
 Here's an example (B is the bits per pixel value, _ is unused, X/Y are the size, S is the start index in tiles):
 
-B_XXYYOOOOOOOO__
+B_XXYYSSSSSSSS__
 
 1001010000000000
 
