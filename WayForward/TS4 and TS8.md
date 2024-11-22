@@ -2,7 +2,7 @@
 
 **Note:** All offsets are in hex and the format is little endian.
 
-Palettes are stored in the TS8 file itself. These files store tiles used to construct maps and should always be 8 bits per pixel.
+Palettes are stored in the TS4/TS8 file itself (Didj version only). These files store tiles used to construct maps and should always be 4 or 8 bits per pixel.
 
 Skip the palette part and this documentation should also work for the Nintendo DS version of the format.
 
