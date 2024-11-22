@@ -9,8 +9,8 @@ Skip the palette part and this documentation should also work for the Nintendo D
 | Offset  | Description | Data Type/length |
 |---------|-----------------------------------------------------------------------|------------------|
 | 0-1FF   | Palette (skip this if you're looking at the DS version!) | BGR555 palette, 256 colors (0x200) |
-| 200     | Unknown | 16-Bit short |
-| 202     | Unknown | 16-Bit short |
+| 200     | Unknown (version number?) | 16-Bit short |
+| 202     | Length of index table divided by 0x10 | 16-Bit short |
 | 204     | Total tile count | 32-Bit integer |
 | 208-213 | Unused | - |
 | Info    | The tile index table starts here. Use the tile count from before here. | Total tile count |
