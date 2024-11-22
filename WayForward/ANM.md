@@ -1,8 +1,10 @@
-# ANM File Format
+# ANM File Format (Nintendo DS, LeapFrog Didj)
 
 **Note:** All offsets are in hex and the format is little endian.
 
-Palettes are stored in the ANM file itself (Didj version only - skip that part if you're looking at the DS version). The sprite data is 8 bits per pixel (and tiled, each tile is 8 pixels wide and 8 pixels tall).
+Palettes are stored in the ANM file itself. The sprite data is 8 bits per pixel and tiled (8x8 pixels).
+
+Skip the palette part and this documentation also works for the Nintendo DS version of the format.
 
 | Offset | Description | Data Type |
 |--------|-----------------------------------------------------------------------|------------------|
@@ -14,7 +16,7 @@ Palettes are stored in the ANM file itself (Didj version only - skip that part i
 | 208    | Sprite data start offset | 32-Bit integer |
 | 20C    | Size of all sprite data from the start offset | 32-Bit integer |
 | (Info) | Repeat the following for however many frames there are in the file | - |
-| 210    | Tile alignment and hitbox table offset | 32-Bit integer |
+| 210    | Hitbox/sprite chunk info offset | 32-Bit integer |
 | 214    | Start of current sprite (add the sprite data start offset to this!)| 32-Bit integer |
 | 218    | Size of the current sprite in bytes | 32-Bit integer |
 
@@ -23,14 +25,14 @@ The info starting after this point is a work in progress!
 
 | Offset | Description | Data Type |
 |--------|-----------------------------------------------------------------------|------------------|
-| (start of tile alignment/hitbox table)+00  | Main hitbox | 32 bytes (structure not yet known, the values in here are all 16-Bit shorts) |
-| (start of tile alignment/hitbox table)+20  | Chunk count (for this example, it's 2 - the X/Y/info value counts are determined by this value) | 16-Bit short |
-| (start of tile alignment/hitbox table)+22  | Chunk 1 X position | 16-Bit short |
-| (start of tile alignment/hitbox table)+24  | Chunk 2 X position | 16-Bit short |
-| (start of tile alignment/hitbox table)+26  | Chunk 1 Y position | 16-Bit short |
-| (start of tile alignment/hitbox table)+28  | Chunk 2 Y position | 16-Bit short |
-| (start of tile alignment/hitbox table)+2A  | Chunk 1 info (Check below for the format!) | 16-Bit short |
-| (start of tile alignment/hitbox table)+2C  | Chunk 2 info (Check below for the format!) | 16-Bit short |
+| (start of hitbox/sprite chunk info table)+00  | Main hitbox | 32 bytes (structure not yet known, the values in here are all 16-Bit shorts) |
+| (start of hitbox/sprite chunk info table)+20  | Chunk count (for this example, it's 2 - the X/Y/info value counts are determined by this value) | 16-Bit short |
+| (start of hitbox/sprite chunk info table)+22  | Chunk 1 X position | 16-Bit short |
+| (start of hitbox/sprite chunk info table)+24  | Chunk 2 X position | 16-Bit short |
+| (start of hitbox/sprite chunk info table)+26  | Chunk 1 Y position | 16-Bit short |
+| (start of hitbox/sprite chunk info table)+28  | Chunk 2 Y position | 16-Bit short |
+| (start of hitbox/sprite chunk info table)+2A  | Chunk 1 info (Check below for the format!) | 16-Bit short |
+| (start of hitbox/sprite chunk info table)+2C  | Chunk 2 info (Check below for the format!) | 16-Bit short |
 
 The info variables are formatted like this (these are the individual bits of the info value):
 
