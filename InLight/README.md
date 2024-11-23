@@ -4,5 +4,6 @@
 
 Filetypes from now-defunct LeapFrog developer InLight Entertainment.
 
-- [.tex (Textures)](TEX.md)
+- [.tex (textures/sprites)](TEX.md)
 - .anim (probably animation, but hasn't been reversed yet)
+- .mmd (models)
