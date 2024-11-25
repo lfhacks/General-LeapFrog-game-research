@@ -2,9 +2,9 @@
 
 **Note:** All offsets are in hex and the format is little endian.
 
-Palettes are stored in the TS4/TS8 file itself (Didj version only). These files store tiles used to construct maps and should always be 4 or 8 bits per pixel.
+**Description:**
 
-Skip the palette part and this documentation should also work for the Nintendo DS version of the format.
+TS4 and TS8 store 8x8 tiles which get constructed into 16x16 blocks. Each block is referenced by an LYR file to construct a map or an image. Depending on the version of the format (Nintendo DS or LeapFrog Didj), color palettes may or may not be stored as the first 0x200 bytes of the file.
 
 | Offset  | Description | Data Type/length |
 |---------|-----------------------------------------------------------------------|------------------|
@@ -13,5 +13,5 @@ Skip the palette part and this documentation should also work for the Nintendo D
 | 202     | Length of index table divided by 0x10 | 16-Bit short |
 | 204     | Total tile count | 32-Bit integer |
 | Info    | The tile index table starts here. Use the tile count from before here. | Total tile count |
-| -       | Read (Total tile count) number of entries, each entry being a 32-Bit integer    | - |
+| -       | Read 4 entries until you hit the end of the length of the index table.  | 2 16-bit values, first one is the tile index, second one is unknown. There's 4 tiles per entry. |
 | -       | The tile data should start right after reading the entries             | 4BPP (reverse order)/8BPP indexed tile data (depending on the file type) |
