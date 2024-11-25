@@ -2,9 +2,11 @@
 
 **Note:** All offsets are in hex and the format is little endian.
 
-**Description:**
+# Description
 
 TS4 and TS8 store 8x8 tiles which get constructed into 16x16 blocks. Each block is referenced by an LYR file to construct a map or an image. Depending on the version of the format (Nintendo DS or LeapFrog Didj), color palettes may or may not be stored as the first 0x200 bytes of the file.
+
+# Format breakdown
 
 | Offset  | Description | Data Type/length |
 |---------|-----------------------------------------------------------------------|------------------|
