@@ -1,13 +1,6 @@
 import struct
 from PIL import Image
 from enum import Enum
-
-"""
-class ImageFormat(Enum):
-    RGBA5551 = 0
-    RGBA4444 = 1
-    RGB565 = 2
-"""
     
 filename = (input("What is the name of your file (leave out the .oot extension): "))
 
@@ -19,7 +12,7 @@ with open((filename + ".oot"), "rb") as file:
     bytelayout, unknown6, unknown7, unknown8, unknown9, unknown10, unknown11 = struct.unpack("<7I", file.read(28))
     imagedata = file.read()
     if height == 0:
-        # override for handling certain heightless files from Ni Hao, Kai-lan and potentially Tinker 
+        # override for handling certain heightless files from Ni Hao, Kai-lan and potentially Tinker Bell
         print("Warning: Height is blank - assuming 256px")
         height = 256
     if bytelayout == 1:
@@ -42,10 +35,18 @@ with open((filename + ".oot"), "rb") as file:
         image_crop = rawimage.crop((0, 0, crop_width, crop_height))
         image_crop.save((filename + ".png"))
         image_crop.show()
+    elif bytelayout == 6:
+        print("1-bit")
+        rawimage = Image.frombytes("1", (width, height), imagedata, "raw", "1;IR")
+        image_crop = rawimage.crop((0, 0, crop_width, crop_height))
+        image_crop.save((filename + ".png"))
+        image_crop.show()
     elif bytelayout == 7:
+        print("A8")
         rawimage = Image.frombytes("L", (width, height), imagedata, "raw", "L")
         image_crop = rawimage.crop((0, 0, crop_width, crop_height))
         image_crop.save((filename + ".png"))
         image_crop.show()
     else:
+        # debug string that is printed as yellow
         print("\033[1;33mDebug: This texture is stored in unimplemented format " + str(bytelayout) + ". Please paste this message into a new issue on GitHub and include a zip file of your affected samples.\033[1;37m")
