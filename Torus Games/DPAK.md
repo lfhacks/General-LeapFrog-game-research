@@ -25,6 +25,8 @@ For the Didj game, it's stored in an elf file. Said elf file even has the DPAK s
 | offset+0x1C                    | nothing              | 4 Bytes                           | Reserved                          |
 
 # Identifying DPAK sections using their headers
+You'll need to do this because the identifiers are inconsistent.
+
 Below is a list of checks you can do to identify what each section is:
 
 | Section type | What to check for |
