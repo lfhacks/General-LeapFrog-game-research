@@ -2,6 +2,7 @@
 Below is a list of checks you can do to identify what each section is:
 
 | Section type | What to check for |
+|--------------------------------|----------------------|
 | Audio (GBA-exclusive) | "MUSC" |
 | Sprites (compressed) | "SPRT" |
 | Sprites (uncompressed, V3) | 03000100 |
