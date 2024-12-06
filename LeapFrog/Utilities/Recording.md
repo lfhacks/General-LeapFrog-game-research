@@ -79,6 +79,7 @@ Get PuTTY here:
 https://putty.org/
 
 Now go to LeapPad Manager and run "/etc/init.d/telnetd restart" (do not put this in your cartridge script! It breaks something you'll need later if you do that.)
+
 ![image](https://gist.github.com/user-attachments/assets/d7f9cb90-abf5-4066-a1b4-446dfedf0a50)
 
 Get your LeapPad's IP again and set up PuTTY like what's seen below (the IP seen there is an example, do not use that one):
