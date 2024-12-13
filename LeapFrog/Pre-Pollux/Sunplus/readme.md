@@ -9,3 +9,7 @@ Format list:
 - SunMIDI
 
 You'll need to get the algorithm libraries from the [Generalplus Gadget Utility](http://www.generalplus.com/1LVlangLNxxSVyySNservice_n_support_d) to use the conversion script.
+
+Your Python version also has to be 32-Bit.
+
+Special thanks to the Furby hacking community for figuring out how to use the A1800 codec!
