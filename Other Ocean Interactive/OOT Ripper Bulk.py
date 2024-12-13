@@ -1,7 +1,7 @@
 import struct
 from PIL import Image
 from pathlib import Path
-import time
+import math
 
 filelist = list(Path('.').glob('*.oot'))
 
@@ -26,6 +26,18 @@ def rgba5551_to_argb1555(rgba_data):
     
     return argb_data
 
+# power finder from https://www.geeksforgeeks.org/smallest-power-of-2-greater-than-or-equal-to-n/
+def nearestPowerOf2(N):
+    # Calculate log2 of N
+    a = int(math.log2(N))
+ 
+    # If 2^a is equal to N, return N
+    if 2**a == N:
+        return N
+     
+    # Return 2^(a + 1)
+    return 2**(a + 1)
+
 for files in filelist:
     with open(files, "rb") as file:
         print(files)
@@ -36,9 +48,9 @@ for files in filelist:
         bytelayout, unknown6, unknown7, unknown8, unknown9, unknown10, unknown11 = struct.unpack("<7I", file.read(28))
         imagedata = file.read()
         if height == 0:
-            # override for handling certain heightless files from Ni Hao, Kai-lan and potentially Tinker Bell
-            print("Warning: Height is blank - assuming 256px")
-            height = 256
+            # override for handling certain heightless files from NIH
+            height = nearestPowerOf2(crop_height)
+            print("\033[1;33mWarning: Height is blank - guessing " + str(height) + " from crop height\033[1;0m")
         if bytelayout == 1:
             print("RGBA4444")
             rawimage = Image.frombytes("RGBA", (width, height), imagedata, "raw", "RGBA;4B")
