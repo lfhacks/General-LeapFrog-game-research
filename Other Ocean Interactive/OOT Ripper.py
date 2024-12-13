@@ -1,7 +1,29 @@
 import struct
 from PIL import Image
-
+from enum import Enum
+    
 filename = (input("What is the name of your file (leave out the .oot extension): "))
+
+def rgba5551_to_argb1555(rgba_data):
+    argb_data = bytearray(len(rgba_data))  # Same length since it's still 16 bits per pixel
+    for i in range(0, len(rgba_data), 2):
+        # Extract the 16-bit pixel value
+        pixel = (rgba_data[i] << 8) | rgba_data[i + 1]
+        
+        # Extract the RGBA components
+        r = (pixel >> 11) & 0x1F  # Red: bits 15:11
+        g = (pixel >> 6) & 0x1F  # Green: bits 10:6
+        b = (pixel >> 1) & 0x1F  # Blue: bits 5:1
+        a = pixel & 0x1        # Alpha: bit 0
+        
+        # Reassemble in ARGB1555 order
+        argb_pixel = (a << 15) | (r << 10) | (g << 5) | b
+        
+        # Store the ARGB1555 pixel value
+        argb_data[i] = argb_pixel >> 8
+        argb_data[i + 1] = argb_pixel & 0xFF
+    
+    return argb_data
 
 with open((filename + ".oot"), "rb") as file:
     unknown1 = struct.unpack("<I", file.read(4))
@@ -10,6 +32,10 @@ with open((filename + ".oot"), "rb") as file:
     unknown2, unknown3, unknown4, unknown5 = struct.unpack("<4I", file.read(16))
     bytelayout, unknown6, unknown7, unknown8, unknown9, unknown10, unknown11 = struct.unpack("<7I", file.read(28))
     imagedata = file.read()
+    if height == 0:
+        # override for handling certain heightless files from Ni Hao, Kai-lan and potentially Tinker Bell
+        print("Warning: Height is blank - assuming 256px")
+        height = 256
     if bytelayout == 1:
         print("RGBA4444")
         rawimage = Image.frombytes("RGBA", (width, height), imagedata, "raw", "RGBA;4B")
@@ -18,15 +44,31 @@ with open((filename + ".oot"), "rb") as file:
         image_crop = rawimage.crop((0, 0, crop_width, crop_height))
         image_crop.save((filename + ".png"))
         image_crop.show()
-    if bytelayout == 0:
-        raise ValueError("RGBA5551 file detected - please convert manually")
-        rawimage = Image.frombytes("RGBA", (width, height), imagedata, "raw", "BGRA;15") # note - expects big endian. UDIs tend to be little-endian.
+    elif bytelayout == 0:
+        print("RGBA5551")
+        imagedata_swapped = rgba5551_to_argb1555(imagedata)
+        rawimage = Image.frombytes("RGBA", (width, height), imagedata_swapped, "raw", "BGRA;15") # note - expects big endian.
         image_crop = rawimage.crop((0, 0, crop_width, crop_height))
         image_crop.save((filename + "_test.png"))
         image_crop.show()
-    if bytelayout == 2:
+    elif bytelayout == 2:
         print("RGB565")
         rawimage = Image.frombytes("RGB", (width, height), imagedata, "raw", "BGR;16")
         image_crop = rawimage.crop((0, 0, crop_width, crop_height))
         image_crop.save((filename + ".png"))
         image_crop.show()
+    elif bytelayout == 6:
+        print("1-bit")
+        rawimage = Image.frombytes("1", (width, height), imagedata, "raw", "1;IR")
+        image_crop = rawimage.crop((0, 0, crop_width, crop_height))
+        image_crop.save((filename + ".png"))
+        image_crop.show()
+    elif bytelayout == 7:
+        print("A8")
+        rawimage = Image.frombytes("L", (width, height), imagedata, "raw", "L")
+        image_crop = rawimage.crop((0, 0, crop_width, crop_height))
+        image_crop.save((filename + ".png"))
+        image_crop.show()
+    else:
+        # debug string that is printed as yellow
+        print("\033[1;33mDebug: This texture is stored in unimplemented format " + str(bytelayout) + ". Please paste this message into a new issue on GitHub and include a zip file of your affected samples.\033[1;37m")
