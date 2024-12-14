@@ -1,6 +1,8 @@
 # Sunplus
 This section is specifically for common formats on SPG/SPC-based LeapFrog products. This includes Generalplus stuff too.
 
+LeapFrog started using SPG-based hardware before the Didj came out and the formats they used on them have remained mostly the same over the years.
+
 Format list:
 
 - A16 (Sunplus A1600 Codec)
