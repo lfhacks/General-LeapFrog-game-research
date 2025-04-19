@@ -8,7 +8,7 @@ def decodeSYN(syn, offsets, system): #Pass the already partially parsed SYN to t
         volume = 0x64
         midi = MidiFileHandler()
         midiFile, track = midi.create_midi_file()
-        midi.add_track_name(track, f'{system} test {index}')
+        midi.add_track_name(track, f'{system} track {index}')
         midi.add_tempo_change(track, midi.bpm_to_tempo(32))
         syn.seek(offset)
         decoder = BE_BitReader(syn)
@@ -60,10 +60,10 @@ def decodeSYN(syn, offsets, system): #Pass the already partially parsed SYN to t
                 padding = decoder.read(8)
             elif data == 0xFF:
                 break
-        midi.save_midi_file(midiFile, f'TEST_MIDI_{index:02}.mid')
+        midi.save_midi_file(midiFile, f'MIDI_{index:02}.mid')
         midis.append(f'TEST_MIDI_{index:02}.mid')
         index+=1
-    midi.combine_midi_files(midis, "Combined test.mid")
+    midi.combine_midi_files(midis, "Combined Example.mid")
 
 with open(syn, "rb") as f: #Decode the header and parse the SYN file. trackOffsets stores offsets, system is used in the track name, f is the file.
     trackOffsets = []
