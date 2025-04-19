@@ -1,2 +1,2 @@
 # Tools
-This folder contains example tools for parsing the described files in Pre-Pollux
+This folder contains example tools for parsing the described files and formats in Pre-Pollux
