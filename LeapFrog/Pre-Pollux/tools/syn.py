@@ -61,7 +61,7 @@ def decodeSYN(syn, offsets, system): #Pass the already partially parsed SYN to t
             elif data == 0xFF:
                 break
         midi.save_midi_file(midiFile, f'MIDI_{index:02}.mid')
-        midis.append(f'TEST_MIDI_{index:02}.mid')
+        midis.append(f'MIDI_{index:02}.mid')
         index+=1
     midi.combine_midi_files(midis, "Combined Example.mid")
 
