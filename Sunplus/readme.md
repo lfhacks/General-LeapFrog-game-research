@@ -17,7 +17,7 @@ Your Python version also has to be 32-Bit.
 Special thanks to the Furby hacking community for figuring out how to use the A1800 codec!
 
 ### What devices does this include?
-- A *ton* of toys (a lot of which such as a Mr. Pencil toy have easily dumpable ROMs - this needs to be looked into further)
+- A *ton* of toys
 - ClickStart: My First Computer
 - Disney Zippity (yes, this is a LeapFrog console)
 - Fly Pentop Computer (needs to be confirmed, likely the same hardware as the Tag Reader)
