@@ -20,7 +20,6 @@ Special thanks to the Furby hacking community for figuring out how to use the A1
 - A *ton* of toys
 - ClickStart: My First Computer
 - Disney Zippity (yes, this is a LeapFrog console)
-- Fly Pentop Computer (needs to be confirmed, likely the same hardware as the Tag Reader)
 - Tag Reader
 - Tag Jr
 - LeapReader
