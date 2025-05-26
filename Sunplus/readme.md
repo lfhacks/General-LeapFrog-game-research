@@ -8,6 +8,7 @@ Format list:
 - A16 (Sunplus A1600 Codec)
 - S72 (Sunplus S720 Codec)
 - A18 (Generalplus A1800 Codec)
+- DRM (various, usually IMA ADPCM. IMA on SunPlus devices is officially referred to as "Hardware ADPCM")
 - SunMIDI
 
 You'll need to get the algorithm libraries from the [Generalplus Gadget Utility](http://www.generalplus.com/1LVlangLNxxSVyySNservice_n_support_d) to use the conversion script.
