@@ -1,5 +1,8 @@
 # RAM chunk format
 
+### Note:
+This format is exclusive to the GBA version. I'm keeping this up for others who may find it useful, but it isn't relevant here.
+
 The memory in every game developed by Torus is split up into sections. Each chunk is structured like this:
 
 | Address                        | Variable Name         | Data Type                         | Description                       |
