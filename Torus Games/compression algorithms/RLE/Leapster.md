@@ -24,5 +24,5 @@ CCCX
 | 5             | Draw pixels          | Each pixel is drawn from left to right if the sprite isn't flipped.         |
 | 5             | Draw pixels          | The palette index from earlier also gets combined with this value, making   |
 | 5             | Draw pixels          | an 8-Bit pixel. (basically, 4-Bit color index + palette index * 0x10)       |
-| 6             | Move to next scanline| Resets X position to the left edge of the sprite, adds 1 to y position      |
+| 6             | Move to next row     | Resets X position to the left edge of the sprite, adds 1 to y position      |
 | 7             | Reset to left edge   | Resets the X position to the left edge of the sprite                        |
