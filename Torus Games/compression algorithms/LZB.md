@@ -26,7 +26,8 @@ Unpack_GetType: ; Get the compression type for the file we're accessing
         b_s        ReturnFromFunction ; Return from this function
     LZW:
         mov_s      r0,0x1 ; Set the mode to 1 (LZW compression, unused)
-                                              
+        ; This is assembly code, so branching to the return label right before it isn't needed
+
     ReturnFromFunction:
         j_s        blink ; Return to where this function was called from
 ```
