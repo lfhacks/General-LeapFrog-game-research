@@ -1,4 +1,4 @@
-# Torus Games RLE sprite decompression info (Leapster)
+# Torus Games sprite decompression info (Leapster)
 
 ## Description of the format
 This format was designed specifically to be decompressed directly onto the frame buffer. Every command is to tell the renderer what to do next.
