@@ -13,9 +13,9 @@ Unpack_GetType: ; Get the compression type for the file we're accessing
     breq       r1,0x425a,LZB
     breq       r1,0x5444,DT
     breq       r1,0x575a,LZW
-    
+
+    ; This only runs if the bytes didn't match what was expected by the previous branch if equal instructions
     mov_s      r0,0x0 ; Set the mode to 0 (uncompressed)
-    
     b_s        ReturnFromFunction ; Return from this function
                                               
     LZB:  
