@@ -1,5 +1,5 @@
 # WayForward Leapster sprite transparency RLE decompression info
-This is a very simple algorithm. The actual pixel data is uncompressed, but the transparent pixels are.
+This is a very simple algorithm. The color pixel data is uncompressed, but the transparent pixels are.
 
 It's designed with storing graphics in RAM shortly before drawing them to the screen in mind (so already drawn visuals can be reused).
 
