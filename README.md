@@ -1,5 +1,5 @@
 # General LeapFrog game research
-A repository for posting documents and code for helping people with converting, extracting, viewing and maybe even modding data for games on LeapFrog devices
+A repository for posting documents and code for helping people with converting, extracting, viewing and maybe even modding in data for games on LeapFrog devices
 
 # Who can contribute?
 Anyone! Just don't make stuff up or intentionally add misleading/false information. Works in progress are allowed.
