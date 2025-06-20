@@ -12,10 +12,14 @@ Each command takes up 3 bits and is stored like this in a nibble (C is for the c
 
 CCCX
 
+Note:
+
+Replace l with | if you use this in code.
+
 | Command value | Description          | Structure                                                                   |
 |---------------|----------------------|-----------------------------------------------------------------------------|
 | 0 to 3        | Horizontal movement  | Next nibble is a displacement value, calculate full displacement like this: |
-| 0 to 3        | Horizontal movement  | displacement = (command << 4) | displacementNibble                          |
+| 0 to 3        | Horizontal movement  | displacement = (command << 4) l displacementNibble                          |
 | 0 to 3        | Horizontal movement  | With the displacement calculated, add it to the current X position          |
 | 0 to 3        | Horizontal movement  | on the screen (a frame buffer in the case of the Leapster                   |
 | 4             | Set palette index    | Next nibble is the index value                                              |
