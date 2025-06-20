@@ -9,7 +9,7 @@ Unpack_GetType: ; Get the compression type for the file we're accessing
     asl_s      r12,r12,0x8  ; Shift r12 left by 8 bits
     or_s       r1,r1,r12    ; Combine r1 and r12 to make a 16-Bit value, store the result in r1
 
-    ; Each of these lines checks if R1 contains the magic numbers for known formats
+    ; Each of these lines checks if r1 contains the magic numbers for known formats
     breq       r1,0x425a,LZB
     breq       r1,0x5444,DT
     breq       r1,0x575a,LZW
