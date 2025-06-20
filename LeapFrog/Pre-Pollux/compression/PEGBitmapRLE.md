@@ -1,7 +1,7 @@
 # PEG Bitmap RLE decompression info
 This format is actually a direct copy of TGA RLE compression. I'll still describe it below, but you can probably already find open source code samples that can decode it.
 
-Because decompressing a PEG Bitmap requires information from the header, this is the structure:
+Because decompressing a PEG Bitmap requires information from the header (specifically the width and the height because there's no compressed length or terminator value), this is the structure:
 
 | Value name              | Bit width      |
 |-------------------------|----------------|
