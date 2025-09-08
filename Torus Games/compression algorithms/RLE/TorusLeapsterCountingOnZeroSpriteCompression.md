@@ -16,7 +16,7 @@ Note:
 
 Replace l with | if you use this in code.
 
-| Command value | Description          | Structure                                                                   |
+| Command value | Description          | Structure (some of these are complex enough that they needed multiple lines) |
 |---------------|----------------------|-----------------------------------------------------------------------------|
 | 0 to 3        | Horizontal movement  | Next nibble is a displacement value, calculate full displacement like this: |
 | 0 to 3        | Horizontal movement  | displacement = (command << 4) l displacementNibble                          |
