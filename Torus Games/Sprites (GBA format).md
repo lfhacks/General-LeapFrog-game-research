@@ -72,7 +72,7 @@ Chunk:
 |--------------------------------|----------------------|-----------------------------------|-----------------------------------|
 | 0x0                            | Align X              | 8-Bit integer                     | X alignment value - add it        |
 | 0x1                            | Align Y              | 8-Bit integer                     | Y alignment value - add it        |
-| 0x2                            | Shape                | 8-Bit                             | Block shape/size value            |
+| 0x2                            | Shape                | 8-Bit                             | Chunk shape/size value            |
 | 0x3                            | Additional palette ID| 8-Bit integer                     | Add this to the base palette ID   |
 | 0x4                            | Next chunk offset    | 8-Bit integer                     | Relative to current chunk start   |
 | 0x5                            | Unknown              | 8-Bit                             | Unknown                           |
