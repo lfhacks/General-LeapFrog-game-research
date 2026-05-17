@@ -1,4 +1,4 @@
-This format is used in Sonic X and Go, Diego, Go! Animal Rescuer on the Leapster. It's also used in the following GBA titles (list is currently incomplete, I'm only listing the ones I know):
+This format is used in NASCAR, Sonic X and Go, Diego, Go! Animal Rescuer on the Leapster. It's also used in the following GBA titles (list is currently incomplete, I'm only listing the ones I know):
 - Curious George
 - Fantastic 4: Flame On
 - Pitfall: the Lost Expedition
