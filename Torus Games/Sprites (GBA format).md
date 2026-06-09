@@ -1,21 +1,54 @@
-This format is used in NASCAR, Sonic X and Go, Diego, Go! Animal Rescuer on the Leapster. It's also used in the following GBA titles (list is currently incomplete, I'm only listing the ones I know):
+This aims to document the sprite format used in most of the handheld titles made by Torus Games.
+
+LeapFrog game list:
+- Cars (shadows, a few menu graphics)
+- Cars: Supercharged (shadows, a few menu graphics)
+- NASCAR (shadows, a few menu graphics, some track objects)
+- Sonic X (every sprite)
+- Go, Diego, Go! Animal Rescuer (every sprite)
+
+GBA game list:
+- Backyard Football
+- Backyard Football 2006
+- Backyard Sports Football 2007
+- Cabela's Big Game Hunter 2005 Adventures
 - Curious George
+- Dead to Rights
+- Doom II
+- Duke Nukem Advance
+- Fantastic 4
 - Fantastic 4: Flame On
+- Gumby vs. the Astrobots
+- Ice Nine
+- Minority Report: Everybody Runs
 - Pitfall: the Lost Expedition
+- Rapala Pro Fishing
 - Shrek Smash n' Crash Racing
+- Sportsmans Pack Cabela's Big Game Hunter + Rapala Pro Fishing
+- The Invincible Iron Man
+
+DS game list:
+- Shrek Smash n' Crash Racing
+Maybe more? Their DS library still needs to be checked.
 
 Some sprites still come out broken with this documentation, so it's unfinished!
+
+Remaining issues with this documentation:
+- Earlier GBA titles (Space Invaders, Planet of the Apes) are different in how they work and need to be documented too
+- Some sprites have a single chunk misplaced
+- Some sprites use the wrong palettes
+- Some sprites load the wrong tiles entirely
 
 Sprite container header format:
 | Address                        | Variable Name        | Data Type                         | Description                       |
 |--------------------------------|----------------------|-----------------------------------|-----------------------------------|
-| 0x0                            | Magic number         | Section signature, 32-Bit         | b'\x04\x00\x01\x00'               |
-| 0x4                            | Entry count          | 16-Bit little endian integer      | The number of sprite offsets      |
-| 0x6                            | Palette table offset | 16-Bit little endian integer      | Where the palette table starts    |
-| 0x8                            | Tile data start      | 16-Bit little endian integer      | Where the tile data starts        |
-| 0xA                            | Unknown              | 16-Bit                            | Unknown                           |
-| Loop the next entry            |                      |                                   |                                   |
-| 0xC                            | Sprite offset        | 32-Bit little endian integer      | Points to a sprite                |
+| 0x0                            | Magic number         | Section signature, 32-Bit         | b'\x03\x00\x01\x00' or b'\x04\x00\x01\x00' |
+| 0x4                            | Entry count          | 16-Bit little endian integer      | The number of sprite offsets               |
+| 0x6                            | Palette table offset | 16-Bit little endian integer      | Where the palette table starts             |
+| 0x8                            | Tile data start      | 16-Bit little endian integer      | Where the tile data starts                 |
+| 0xA                            | Unknown              | 16-Bit                            | Unknown                                    |
+| Loop the next entry            |                      |                                   |                                            |
+| 0xC                            | Sprite offset        | 32-Bit little endian integer      | Points to a sprite                         |
 
 Palette table format:
 | Address                        | Variable Name        | Data Type                         | Description                       |
