@@ -29,6 +29,7 @@ GBA game list:
 
 DS game list:
 - Shrek Smash n' Crash Racing
+
 Maybe more? Their DS library still needs to be checked.
 
 Some sprites still come out broken with this documentation, so it's unfinished!
