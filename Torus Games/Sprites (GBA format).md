@@ -35,7 +35,7 @@ Maybe more? Their DS library still needs to be checked.
 Some sprites still come out broken with this documentation, so it's unfinished!
 
 Remaining issues with this documentation:
-- Earlier GBA titles (Space Invaders, Planet of the Apes) are different in how they work and need to be documented too
+- Earlier GBA titles (Jackie Chan Adventures, Space Invaders, Planet of the Apes) are different in how they work and need to be documented too
 - Some sprites have a single chunk misplaced
 - Some sprites use the wrong palettes
 - Some sprites load the wrong tiles entirely
